@@ -37,6 +37,7 @@ import {
 } from '@/components/case/CaseLayout'
 import { Gallery } from '@/components/case/Gallery'
 import { Reveal } from '@/components/ui/Reveal'
+import { relatedTo } from '@/lib/caseStudies'
 
 // ── Metadata ────────────────────────────────────────────────────────────────
 
@@ -183,26 +184,7 @@ export default function NorthpointAdvisoryPage() {
       coverShot={<NpCoverShot />}
       ctaHeadline="Like the thinking? Let's build yours."
       ctaBody="This is a concept — but the craft is real. Tell us what you're building and we'll get back within one business day."
-      related={[
-        {
-          name: 'Brew & Bloom',
-          href: '/work/brew-and-bloom',
-          category: 'Concept · E-commerce',
-          shotClassName: 'work-card__shot--bb',
-        },
-        {
-          name: 'StockFlow',
-          href: '/work/stockflow',
-          category: 'Concept · SaaS',
-          shotClassName: 'work-card__shot--sf',
-        },
-        {
-          name: 'Sapling',
-          href: '/work/sapling',
-          category: 'Concept · Product',
-          shotClassName: 'work-card__shot--sap',
-        },
-      ]}
+      related={relatedTo('northpoint-advisory')}
       breadcrumb="Northpoint Advisory"
     >
       {/* ── THE BRIEF ─────────────────────────────────────────────────── */}
@@ -354,7 +336,7 @@ export default function NorthpointAdvisoryPage() {
       <Gallery
         id="gallery"
         headline="Inside the concept."
-        subtext="Five screens from the Northpoint design — click any screen to view it larger."
+        subtext="Screens from the Northpoint Advisory design — click any screen to view it larger."
         images={[
           {
             src: '/screenshots/np-check.png',

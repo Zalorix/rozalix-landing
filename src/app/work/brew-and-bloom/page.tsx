@@ -39,6 +39,7 @@ import {
 } from '@/components/case/CaseLayout'
 import { Gallery } from '@/components/case/Gallery'
 import { Reveal } from '@/components/ui/Reveal'
+import { relatedTo } from '@/lib/caseStudies'
 
 // ── Metadata ────────────────────────────────────────────────────────────────
 
@@ -230,26 +231,7 @@ export default function BrewAndBloomPage() {
       coverShot={<BbCoverShot />}
       ctaHeadline="Got a product worth showing off?"
       ctaBody="This is a concept — but the craft is real. Tell us what you're selling and we'll get back within one business day."
-      related={[
-        {
-          name: 'Northpoint Advisory',
-          href: '/work/northpoint-advisory',
-          category: 'Concept · Consulting',
-          shotClassName: 'work-card__shot--np',
-        },
-        {
-          name: 'StockFlow',
-          href: '/work/stockflow',
-          category: 'Concept · Web app',
-          shotClassName: 'work-card__shot--sf',
-        },
-        {
-          name: 'Sapling',
-          href: '/work/sapling',
-          category: 'Concept · Landing page',
-          shotClassName: 'work-card__shot--sap',
-        },
-      ]}
+      related={relatedTo('brew-and-bloom')}
       breadcrumb="Brew & Bloom"
     >
       {/* ── THE BRIEF ─────────────────────────────────────────────────── */}

@@ -52,6 +52,7 @@ import {
 } from '@/components/case/CaseLayout'
 import { Wrap } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
+import { relatedTo } from '@/lib/caseStudies'
 
 // ── Metadata ────────────────────────────────────────────────────────────────
 
@@ -524,26 +525,7 @@ export default function StockFlowPage() {
       }
       ctaHeadline="Outgrown your spreadsheets?"
       ctaBody="This is a concept — but the craft is real. Tell us what you need to track and we'll get back within one business day."
-      related={[
-        {
-          name: 'Northpoint Advisory',
-          href: '/work/northpoint-advisory',
-          category: 'Concept · Consulting',
-          shotClassName: 'work-card__shot--np',
-        },
-        {
-          name: 'Brew & Bloom',
-          href: '/work/brew-and-bloom',
-          category: 'Concept · E-commerce',
-          shotClassName: 'work-card__shot--bb',
-        },
-        {
-          name: 'Sapling Fintech',
-          href: '/work/sapling',
-          category: 'Concept · Landing page',
-          shotClassName: 'work-card__shot--sap',
-        },
-      ]}
+      related={relatedTo('stockflow')}
       breadcrumb="StockFlow"
     >
       {/* ── THE BRIEF ─────────────────────────────────────────────────── */}

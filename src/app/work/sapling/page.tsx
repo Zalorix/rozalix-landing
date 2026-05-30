@@ -46,6 +46,7 @@ import {
 } from '@/components/case/CaseLayout'
 import { Wrap } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
+import { relatedTo } from '@/lib/caseStudies'
 
 // ── Metadata ────────────────────────────────────────────────────────────────
 
@@ -407,26 +408,7 @@ export default function SaplingPage() {
       }
       ctaHeadline="Launching something? Land it well."
       ctaBody="This is a concept — but the craft is real. Tell us what you're launching and we'll get back within one business day."
-      related={[
-        {
-          name: 'Northpoint Advisory',
-          href: '/work/northpoint-advisory',
-          category: 'Concept · Consulting',
-          shotClassName: 'work-card__shot--np',
-        },
-        {
-          name: 'Brew & Bloom',
-          href: '/work/brew-and-bloom',
-          category: 'Concept · E-commerce',
-          shotClassName: 'work-card__shot--bb',
-        },
-        {
-          name: 'StockFlow Dashboard',
-          href: '/work/stockflow',
-          category: 'Concept · Web app',
-          shotClassName: 'work-card__shot--sf',
-        },
-      ]}
+      related={relatedTo('sapling')}
       breadcrumb="Sapling"
     >
       {/* ── THE BRIEF ─────────────────────────────────────────────────── */}
