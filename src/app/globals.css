@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+@theme {
+  /* Indigo / violet */
+  --color-indigo: #4F46E5;
+  --color-indigo-dark: #4338CA;
+  --color-indigo-deeper: #3730A3;
+  --color-indigo-400: #818CF8;
+  --color-indigo-200: #C7D2FE;
+  --color-indigo-50: #EEF2FF;
+  --color-violet: #7C3AED;
+
+  /* Ink / slate */
+  --color-ink-900: #0F172A;
+  --color-slate-800: #1E293B;
+  --color-slate-600: #475569;
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+  --color-slate-50: #F8FAFC;
+
+  /* Status */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(15,23,42,.08);
+  --shadow-hover: 0 8px 24px rgba(15,23,42,.10), 0 2px 6px rgba(15,23,42,.06);
+  --shadow-lift: 0 18px 50px rgba(15,23,42,.12), 0 4px 12px rgba(15,23,42,.06);
+
+  /* Fonts — bound to next/font CSS variables in Task 3 */
+  --font-display: var(--font-space-grotesk), 'Inter', sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-newsreader: var(--font-newsreader-f), Georgia, serif;
+  --font-dmserif: var(--font-dmserif-f), Georgia, serif;
+  --font-jakarta: var(--font-jakarta-f), 'Inter', sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --maxw: 1200px;
+  --gutter: 32px;
+  --nav-h: 68px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 24px); }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink-900);
+  background: #fff;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.12; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--color-indigo); text-decoration: none; }
+img { max-width: 100%; display: block; }
+::selection { background: var(--color-indigo-200); color: var(--color-ink-900); }
+:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--color-indigo-200); border-radius: 4px; }
