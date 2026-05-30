@@ -20,7 +20,6 @@ import {
   Accessibility,
   Lock,
   Home,
-  ChevronRight,
 } from 'lucide-react'
 import {
   CaseLayout,
@@ -38,7 +37,6 @@ import {
 } from '@/components/case/CaseLayout'
 import { Gallery } from '@/components/case/Gallery'
 import { Reveal } from '@/components/ui/Reveal'
-import { Wrap } from '@/components/ui/Section'
 
 // ── Metadata ────────────────────────────────────────────────────────────────
 
