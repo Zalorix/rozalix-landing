@@ -37,7 +37,8 @@ export function Hero() {
             {/*
               .hero__eyebrow-pill:
                 display:inline-flex; align-items:center; gap:8px;
-                padding:6px 6px 6px 14px;   ← NOTE: right padding = 6px, left = 14px
+                padding:6px 6px 6px 14px in the reference; intentionally evened
+                to symmetric 10px horizontal per design request (balanced chip/text)
                 border:1px solid var(--slate-200); background:#fff;
                 border-radius:var(--r-pill); font-size:13px; font-weight:500;
                 color:var(--slate-600); box-shadow:var(--shadow-card)
@@ -50,7 +51,7 @@ export function Hero() {
               className="
                 inline-flex items-center gap-2 rounded-[999px]
                 border border-slate-200 bg-white
-                pl-[14px] pr-[6px] py-[6px]
+                px-[10px] py-[6px]
                 text-[13px] font-medium text-slate-600
                 shadow-[var(--shadow-card)]
               "
