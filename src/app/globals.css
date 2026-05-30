@@ -714,3 +714,163 @@ a.work-card:hover .work-card__view svg { transform: translateX(3px); }
   .sf-mock-metrics { grid-template-columns: 1fr 1fr; }
   .sf-mock-row, .sf-mock-detail { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Sapling — Cover + gallery mockup CSS art
+   Ported from sap.css; scoped under .sap-mock so the fintech
+   landing art never leaks into the Zalorix brand chrome.
+   Vibrant violet + soft gradients · Plus Jakarta Sans (rounded, friendly).
+   Custom props prefixed --sap-* to avoid collisions.
+   ============================================================ */
+.sap-mock {
+  --sap-vio:    #7C3AED;
+  --sap-vio-d:  #6D28D9;
+  --sap-vio-2:  #A855F7;
+  --sap-vio-soft:#F3EEFE;
+  --sap-vio-100:#EADDFD;
+  --sap-pink:   #EC4899;
+  --sap-pink-s: #FCE7F3;
+  --sap-mint:   #10B981;
+  --sap-mint-s: #E7F8F1;
+  --sap-ink:    #211B33;
+  --sap-slate:  #6B6480;
+  --sap-300:    #C9C2DA;
+  --sap-200:    #E8E3F2;
+  --sap-100:    #F3F0F9;
+  --sap-bg:     #FBF9FF;
+
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: var(--sap-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.sap-mock * { box-sizing: border-box; }
+.sap-mock h1, .sap-mock h2, .sap-mock h3, .sap-mock h4 { margin: 0; font-weight: 800; letter-spacing: -.03em; color: var(--sap-ink); }
+.sap-mock p { margin: 0; }
+
+/* ---- Frames ---- */
+.sap-mock-frame { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px rgba(33,27,51,.20), 0 8px 22px rgba(33,27,51,.08); border: 1px solid var(--sap-200); }
+.sap-mock-browser { width: 100%; max-width: 900px; }
+.sap-mock-bar { display: flex; align-items: center; gap: 12px; padding: 11px 15px; background: var(--sap-100); border-bottom: 1px solid var(--sap-200); }
+.sap-mock-bar .dots { display: flex; gap: 6px; }
+.sap-mock-bar .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--sap-300); display: block; }
+.sap-mock-bar .url { flex: 1; height: 24px; border-radius: 999px; background: #fff; border: 1px solid var(--sap-200); display: flex; align-items: center; gap: 6px; padding: 0 11px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--sap-300); }
+.sap-mock-bar .url svg { width: 11px; height: 11px; color: var(--sap-mint); flex-shrink: 0; }
+
+/* ---- Landing nav ---- */
+.sap-mock-nav { display: flex; align-items: center; gap: 18px; padding: 16px 28px; }
+.sap-mock-logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+.sap-mock-logo .mk { width: 24px; height: 24px; border-radius: 8px; background: linear-gradient(140deg, var(--sap-vio), var(--sap-vio-2)); display: grid; place-items: center; color: #fff; }
+.sap-mock-logo .mk svg { width: 14px; height: 14px; }
+.sap-mock-nav__links { display: flex; gap: 20px; margin-left: 10px; }
+.sap-mock-nav__links a { font-size: 13px; font-weight: 600; color: var(--sap-slate); }
+.sap-mock-nav__cta { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+/* ---- Buttons ---- */
+.sap-mock-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: inherit; font-weight: 700; font-size: 13px; padding: 11px 18px; border-radius: 10px; border: 1px solid transparent; }
+.sap-mock-btn--vio { background: var(--sap-vio); color: #fff; box-shadow: 0 8px 20px rgba(124,58,237,.28); }
+.sap-mock-btn--soft { background: var(--sap-vio-soft); color: var(--sap-vio-d); }
+.sap-mock-btn--ghost { background: transparent; color: var(--sap-ink); }
+.sap-mock-btn svg { width: 15px; height: 15px; }
+.sap-mock-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; color: var(--sap-vio-d); background: var(--sap-vio-soft); padding: 6px 13px; border-radius: 999px; }
+.sap-mock-eyebrow svg { width: 13px; height: 13px; }
+
+/* ---- Hero ---- */
+.sap-mock-hero { position: relative; background: radial-gradient(900px 460px at 85% -10%, var(--sap-vio-soft), transparent 60%), radial-gradient(600px 380px at 0% 110%, #FCE7F3, transparent 55%), var(--sap-bg); display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; padding: 40px 28px 36px; align-items: center; }
+.sap-mock-hero__copy h1 { font-size: 44px; line-height: 1.04; margin: 16px 0 0; }
+.sap-mock-hero__copy h1 em { font-style: normal; background: linear-gradient(100deg, var(--sap-vio), var(--sap-pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sap-mock-hero__copy .sub { font-size: 15px; color: var(--sap-slate); margin-top: 14px; max-width: 38ch; line-height: 1.6; }
+.sap-mock-signup { display: flex; gap: 8px; margin-top: 22px; max-width: 380px; }
+.sap-mock-signup .inp { flex: 1; height: 44px; border: 1px solid var(--sap-200); border-radius: 10px; background: #fff; display: flex; align-items: center; padding: 0 14px; font-size: 13px; color: var(--sap-300); }
+.sap-mock-badges { display: flex; gap: 10px; margin-top: 18px; }
+.sap-mock-badge { display: inline-flex; align-items: center; gap: 9px; background: var(--sap-ink); color: #fff; border-radius: 10px; padding: 8px 14px; }
+.sap-mock-badge svg { width: 18px; height: 18px; }
+.sap-mock-badge .t { line-height: 1.1; }
+.sap-mock-badge .t .s { font-size: 8.5px; opacity: .8; display: block; }
+.sap-mock-badge .t .b { font-size: 12px; font-weight: 800; }
+.sap-mock-hero__trust { display: flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 12px; color: var(--sap-slate); }
+.sap-mock-hero__trust .stars { color: #F59E0B; letter-spacing: 1px; }
+
+/* ---- Phone (app) ---- */
+.sap-mock-hero__art { display: grid; place-items: center; position: relative; }
+.sap-mock-phone { width: 256px; background: #1C1530; border-radius: 34px; padding: 9px; box-shadow: 0 30px 70px rgba(33,27,51,.32); }
+.sap-mock-phone__screen { background: var(--sap-bg); border-radius: 26px; overflow: hidden; position: relative; }
+.sap-mock-phone__notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 20px; background: #1C1530; border-radius: 0 0 13px 13px; z-index: 4; }
+.sap-mock-app { padding: 30px 16px 16px; }
+.sap-mock-app__top { display: flex; align-items: center; gap: 10px; }
+.sap-mock-app__top .hi { font-size: 12px; color: var(--sap-slate); }
+.sap-mock-app__top .nm { font-size: 15px; font-weight: 800; }
+.sap-mock-app__top .av { margin-left: auto; width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(140deg,var(--sap-vio),var(--sap-pink)); }
+.sap-mock-bal { margin-top: 14px; border-radius: 16px; padding: 16px; background: linear-gradient(135deg, var(--sap-vio) 0%, var(--sap-vio-2) 100%); color: #fff; position: relative; overflow: hidden; }
+.sap-mock-bal::after { content:""; position:absolute; right:-30px; top:-30px; width:110px; height:110px; border-radius:50%; background: rgba(255,255,255,.15); }
+.sap-mock-bal .l { font-size: 10.5px; opacity: .85; font-weight: 600; }
+.sap-mock-bal .v { font-size: 26px; font-weight: 800; letter-spacing: -.02em; margin-top: 4px; }
+.sap-mock-bal .row { display: flex; gap: 8px; margin-top: 14px; position: relative; }
+.sap-mock-bal .row .chip { background: rgba(255,255,255,.2); border-radius: 8px; padding: 6px 9px; font-size: 9.5px; font-weight: 700; display: inline-flex; gap: 5px; align-items: center; }
+.sap-mock-bal .row .chip svg { width: 11px; height: 11px; }
+.sap-mock-goal { margin-top: 14px; }
+.sap-mock-goal__hd { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 700; }
+.sap-mock-goal__hd .pct { color: var(--sap-vio-d); }
+.sap-mock-bar2 { height: 8px; border-radius: 999px; background: var(--sap-100); margin-top: 7px; overflow: hidden; }
+.sap-mock-bar2 i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--sap-vio), var(--sap-vio-2)); }
+.sap-mock-tx { margin-top: 14px; }
+.sap-mock-tx__t { font-size: 11px; font-weight: 800; color: var(--sap-slate); margin-bottom: 8px; }
+.sap-mock-tx__i { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+.sap-mock-tx__i .ic { width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; font-size: 13px; flex: 0 0 auto; }
+.sap-mock-tx__i .nm { font-size: 12px; font-weight: 700; }
+.sap-mock-tx__i .ct { font-size: 10px; color: var(--sap-slate); }
+.sap-mock-tx__i .amt { margin-left: auto; font-size: 12px; font-weight: 800; }
+.sap-mock-tx__i .amt.in { color: var(--sap-mint); }
+.sap-mock-tabbar { display: flex; justify-content: space-around; padding: 12px 0 4px; border-top: 1px solid var(--sap-100); margin-top: 6px; color: var(--sap-300); }
+.sap-mock-tabbar svg { width: 18px; height: 18px; }
+.sap-mock-tabbar .on { color: var(--sap-vio); }
+
+/* ---- Landing sections (for composite/feature) ---- */
+.sap-mock-sec { padding: 30px 28px; }
+.sap-mock-sec--alt { background: var(--sap-vio-soft); }
+.sap-mock-sec__head { text-align: center; max-width: 30ch; margin: 0 auto 22px; }
+.sap-mock-sec__head h2 { font-size: 28px; }
+.sap-mock-sec__head p { font-size: 13.5px; color: var(--sap-slate); margin-top: 8px; }
+.sap-mock-feats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.sap-mock-fcard { background: #fff; border: 1px solid var(--sap-200); border-radius: 14px; padding: 20px; }
+.sap-mock-fcard .ic { width: 42px; height: 42px; border-radius: 11px; background: var(--sap-vio-soft); display: grid; place-items: center; color: var(--sap-vio); margin-bottom: 14px; }
+.sap-mock-fcard .ic svg { width: 20px; height: 20px; }
+.sap-mock-fcard h3 { font-size: 16px; }
+.sap-mock-fcard p { font-size: 12.5px; color: var(--sap-slate); margin-top: 6px; line-height: 1.55; }
+
+/* feature row (alternating) */
+.sap-mock-frow { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; padding: 26px 0; }
+.sap-mock-frow__art { aspect-ratio: 4/3; border-radius: 16px; background: linear-gradient(150deg, var(--sap-vio-soft), #FCE7F3); display: grid; place-items: center; position: relative; overflow: hidden; }
+.sap-mock-frow__art .glyph { font-size: 64px; }
+.sap-mock-frow__copy h3 { font-size: 26px; }
+.sap-mock-frow__copy p { font-size: 14px; color: var(--sap-slate); margin-top: 10px; line-height: 1.6; max-width: 40ch; }
+.sap-mock-frow__list { display: grid; gap: 9px; margin-top: 14px; }
+.sap-mock-frow__list .li { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; }
+.sap-mock-frow__list .li .ck { width: 18px; height: 18px; border-radius: 50%; background: var(--sap-mint-s); color: var(--sap-mint); display: grid; place-items: center; flex: 0 0 auto; }
+.sap-mock-frow__list .li .ck svg { width: 12px; height: 12px; }
+
+/* how it works */
+.sap-mock-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.sap-mock-step { text-align: center; padding: 8px; }
+.sap-mock-step .n { width: 38px; height: 38px; border-radius: 50%; background: var(--sap-vio); color: #fff; font-weight: 800; display: grid; place-items: center; margin: 0 auto 12px; }
+.sap-mock-step h4 { font-size: 15px; }
+.sap-mock-step p { font-size: 12px; color: var(--sap-slate); margin-top: 5px; }
+
+/* faq */
+.sap-mock-faq { max-width: 560px; margin: 0 auto; }
+.sap-mock-faq__i { background: #fff; border: 1px solid var(--sap-200); border-radius: 12px; padding: 15px 18px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 13.5px; font-weight: 700; }
+.sap-mock-faq__i svg { width: 17px; height: 17px; color: var(--sap-vio); }
+.sap-mock-faq__i.open { border-color: var(--sap-vio-100); }
+
+/* big CTA */
+.sap-mock-cta { margin: 0 28px 30px; border-radius: 18px; background: linear-gradient(135deg, var(--sap-vio) 0%, var(--sap-vio-2) 100%); color: #fff; padding: 34px; text-align: center; position: relative; overflow: hidden; }
+.sap-mock-cta::after { content:""; position:absolute; left:-40px; bottom:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,255,255,.12); }
+.sap-mock-cta h2 { color: #fff; font-size: 26px; position: relative; }
+.sap-mock-cta p { color: rgba(255,255,255,.85); font-size: 13.5px; margin: 8px 0 18px; position: relative; }
+.sap-mock-cta .sap-mock-badges { justify-content: center; position: relative; }
+.sap-mock-cta .sap-mock-badge { background: #fff; color: var(--sap-ink); }
+
+@media (max-width: 720px){
+  .sap-mock-hero, .sap-mock-frow { grid-template-columns: 1fr; }
+  .sap-mock-feats, .sap-mock-steps { grid-template-columns: 1fr; }
+}
