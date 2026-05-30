@@ -395,3 +395,149 @@ a.work-card:hover .work-card__view svg { transform: translateX(3px); }
   .np-mock-hero { padding: 28px 20px 26px; }
   .np-mock-nav { padding: 14px 20px; }
 }
+
+/* ============================================================
+   Brew & Bloom — Cover mockup CSS art
+   Scoped under .bb-mock so it never leaks into the Zalorix
+   brand chrome. Warm cream + terracotta + sage palette.
+   ============================================================ */
+.bb-mock {
+  --bb-paper:   #FBF6EF;
+  --bb-cream:   #F3E9DA;
+  --bb-cream-2: #EADBC6;
+  --bb-terra:   #BF5C36;
+  --bb-terra-d: #A54C2B;
+  --bb-terra-soft: #E9C7B4;
+  --bb-sage:    #7E8B6B;
+  --bb-sage-d:  #687557;
+  --bb-ink:  #3B2D23;
+  --bb-slate:#897868;
+  --bb-line: #E7DBC9;
+  --bb-line2:#EFE6D7;
+
+  font-family: 'Mulish', system-ui, sans-serif;
+  color: var(--bb-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.bb-mock * { box-sizing: border-box; }
+.bb-mock h1, .bb-mock h2, .bb-mock h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400; letter-spacing: 0; line-height: 1.08; margin: 0; color: var(--bb-ink);
+}
+.bb-mock p { margin: 0; }
+
+/* Combo wrapper (storefront + overlapping phone) */
+.bb-cover-combo { position: relative; display: flex; justify-content: center; }
+
+/* ---- Frames ---- */
+.bb-mock-frame {
+  background: var(--bb-paper); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 30px 70px rgba(59,45,35,.18), 0 8px 22px rgba(59,45,35,.08);
+  border: 1px solid var(--bb-line);
+}
+.bb-mock-browser { width: 100%; max-width: 900px; }
+.bb-mock-bar { display: flex; align-items: center; gap: 12px; padding: 11px 15px; background: var(--bb-cream); border-bottom: 1px solid var(--bb-line); }
+.bb-mock-bar .dots { display: flex; gap: 6px; }
+.bb-mock-bar .dots i { display: block; width: 9px; height: 9px; border-radius: 50%; background: #d8c6ad; }
+.bb-mock-url { flex: 1; height: 24px; border-radius: 999px; background: var(--bb-paper); border: 1px solid var(--bb-line); display: flex; align-items: center; gap: 6px; padding: 0 11px; font-family: var(--font-mono); font-size: 11px; color: #b3a48f; }
+.bb-mock-url svg { width: 11px; height: 11px; color: var(--bb-sage); flex-shrink: 0; }
+.bb-mock-screen { background: var(--bb-paper); }
+
+/* ---- Store nav ---- */
+.bb-mock-nav { display: flex; align-items: center; gap: 18px; padding: 16px 26px; border-bottom: 1px solid var(--bb-line2); }
+.bb-mock-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', Georgia, serif; font-size: 18px; color: var(--bb-ink); }
+.bb-mock-logo .mk { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, var(--bb-terra), var(--bb-terra-d)); position: relative; flex-shrink: 0; }
+.bb-mock-logo .mk::after { content:""; position:absolute; right:-2px; top:-3px; width:8px; height:8px; border-radius: 0 60% 60% 60%; background: var(--bb-sage); transform: rotate(15deg); }
+.bb-mock-navlinks { display: flex; gap: 18px; margin-left: 8px; }
+.bb-mock-navlinks a { font-size: 13px; font-weight: 600; color: var(--bb-slate); cursor: default; }
+.bb-mock-navlinks a.on { color: var(--bb-terra); }
+.bb-mock-tools { margin-left: auto; display: flex; align-items: center; gap: 14px; color: var(--bb-ink); }
+.bb-mock-tools svg { width: 17px; height: 17px; }
+.bb-mock-cart { position: relative; display: inline-flex; }
+.bb-mock-cart .ct { position: absolute; top: -6px; right: -7px; background: var(--bb-terra); color: #fff; font-size: 9px; font-weight: 800; width: 14px; height: 14px; border-radius: 50%; display: grid; place-items: center; }
+
+/* ---- Buttons ---- */
+.bb-mock-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 13px; padding: 11px 18px; border-radius: 8px; border: 1px solid transparent; cursor: default; }
+.bb-mock-btn--terra { background: var(--bb-terra); color: #fff; }
+.bb-mock-btn--ghost { background: transparent; color: var(--bb-ink); border-color: var(--bb-cream-2); }
+.bb-mock-btn svg { width: 15px; height: 15px; }
+.bb-mock-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--bb-terra); }
+
+/* ---- Hero / storefront ---- */
+.bb-mock-hero { display: grid; grid-template-columns: 1fr 1fr; }
+.bb-mock-hero__copy { padding: 44px 40px; display: flex; flex-direction: column; justify-content: center; }
+.bb-mock-hero__copy h1 { font-size: 44px; line-height: 1.02; margin: 14px 0 0; }
+.bb-mock-hero__copy h1 em { font-style: italic; color: var(--bb-terra); }
+.bb-mock-hero__copy .sub { font-size: 14.5px; color: var(--bb-slate); margin-top: 14px; max-width: 34ch; line-height: 1.6; }
+.bb-mock-hero__acts { display: flex; gap: 10px; margin-top: 24px; }
+.bb-mock-hero__art { position: relative; background: linear-gradient(160deg, var(--bb-terra-soft), var(--bb-cream)); display: grid; place-items: center; overflow: hidden; }
+.bb-mock-hero__art::before { content:""; position:absolute; width: 200px; height: 200px; border-radius:50%; background: radial-gradient(circle at 40% 35%, rgba(191,92,54,.5), transparent 70%); top: -40px; right: -30px; }
+.bb-mock-emoji { font-size: 96px; filter: drop-shadow(0 12px 18px rgba(59,45,35,.2)); position: relative; }
+.bb-mock-hero__tag { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,.92); border-radius: 10px; padding: 10px 14px; box-shadow: 0 8px 20px rgba(59,45,35,.14); }
+.bb-mock-hero__tag .n { font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; }
+.bb-mock-hero__tag .p { font-size: 12px; color: var(--bb-terra); font-weight: 800; margin-top: 2px; }
+
+/* ---- Product strip ---- */
+.bb-mock-strip { padding: 26px 26px 30px; }
+.bb-mock-strip__head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+.bb-mock-strip__head h2 { font-size: 24px; }
+.bb-mock-strip__head .lk { font-size: 12px; font-weight: 700; color: var(--bb-sage-d); }
+.bb-mock-prods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.bb-mock-card { border: 1px solid var(--bb-line); border-radius: 10px; overflow: hidden; background: var(--bb-paper); }
+.bb-mock-card__img { aspect-ratio: 1/1; display: grid; place-items: center; position: relative; font-size: 46px; }
+.bb-mock-card__img .fav { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.85); display: grid; place-items: center; color: var(--bb-terra); }
+.bb-mock-card__img .fav svg { width: 13px; height: 13px; }
+.bb-mock-card__b { padding: 12px 13px 14px; }
+.bb-mock-card__b .nm { font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: var(--bb-ink); }
+.bb-mock-card__b .ds { font-size: 11.5px; color: var(--bb-slate); margin-top: 2px; }
+.bb-mock-card__row { display: flex; align-items: center; justify-content: space-between; margin-top: 11px; }
+.bb-mock-card__row .pr { font-weight: 800; font-size: 14px; color: var(--bb-terra); }
+.bb-mock-card__row .add { width: 30px; height: 30px; border-radius: 8px; background: var(--bb-ink); color: #fff; display: grid; place-items: center; }
+.bb-mock-card__row .add svg { width: 15px; height: 15px; }
+.bb-mock .c-amber { background: linear-gradient(150deg,#E7B987,#D89A5B); }
+.bb-mock .c-sage  { background: linear-gradient(150deg,#AFB99A,#8B9A77); }
+.bb-mock .c-cocoa { background: linear-gradient(150deg,#B98C6A,#8A5C3C); }
+
+/* ---- Phone (checkout) ---- */
+.bb-mock-phone { width: 228px; background: #2A211B; border-radius: 34px; padding: 9px; box-shadow: 0 30px 70px rgba(59,45,35,.3); }
+.bb-mock-phone__screen { background: var(--bb-paper); border-radius: 26px; overflow: hidden; position: relative; }
+.bb-mock-phone__notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 22px; background: #2A211B; border-radius: 0 0 14px 14px; z-index: 4; }
+.bb-mock-m__top { display: flex; align-items: center; gap: 10px; padding: 30px 16px 12px; border-bottom: 1px solid var(--bb-line2); }
+.bb-mock-m__top .bb-mock-logo { font-size: 15px; }
+.bb-mock-m__top .x { margin-left: auto; color: var(--bb-slate); display: inline-flex; }
+.bb-mock-m__top .x svg { width: 18px; height: 18px; }
+.bb-mock-m__body { padding: 8px 16px 14px; }
+.bb-mock-m__sec { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--bb-sage-d); margin: 14px 0 8px; }
+.bb-mock-pay { display: grid; gap: 10px; }
+.bb-mock-pay__opt { display: flex; align-items: center; gap: 12px; border: 1px solid var(--bb-line); border-radius: 8px; padding: 10px 12px; font-size: 13px; font-weight: 700; }
+.bb-mock-pay__opt.on { border-color: var(--bb-terra); background: #fdf2eb; }
+.bb-mock-pay__opt .rad { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--bb-cream-2); flex: 0 0 auto; }
+.bb-mock-pay__opt.on .rad { border-color: var(--bb-terra); box-shadow: inset 0 0 0 3px #fff, 0 0 0 1px var(--bb-terra); background: var(--bb-terra); }
+.bb-mock-pay__opt .logo { margin-left: auto; font-weight: 800; font-size: 12px; padding: 3px 8px; border-radius: 5px; display: inline-flex; align-items: center; }
+.bb-mock-pay__opt .logo svg { width: 14px; height: 14px; }
+.bb-mock-pay__opt .gcash { color: #fff; background: #0073E6; }
+.bb-mock-pay__opt .maya { color: #fff; background: #1B1B6F; }
+.bb-mock-pay__opt .card { color: var(--bb-slate); }
+.bb-mock-m__bar { padding: 14px 16px; border-top: 1px solid var(--bb-line2); background: var(--bb-paper); }
+.bb-mock-m__bar .bb-mock-btn { width: 100%; padding: 14px; font-size: 14px; }
+.bb-mock-m__bar .tot { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 10px; }
+.bb-mock-m__bar .tot b { font-weight: 800; color: var(--bb-terra); font-size: 15px; }
+
+/* Position the overlapping phone */
+.bb-mock-phone--float { position: absolute; right: -8px; bottom: -30px; }
+
+/* Responsive: collapse hero, hide overlapping phone on narrow screens */
+@media (max-width: 720px) {
+  .bb-mock-hero { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .bb-mock-phone--float { display: none; }
+  .bb-mock-navlinks { display: none; }
+  .bb-mock-prods { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 440px) {
+  .bb-mock-hero__copy { padding: 28px 22px; }
+  .bb-mock-hero__copy h1 { font-size: 32px; }
+  .bb-mock-nav { padding: 14px 18px; }
+}
