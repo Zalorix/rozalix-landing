@@ -2,15 +2,27 @@ type RMarkProps = { className?: string; mono?: boolean }
 
 export function RMark({ className, mono = false }: RMarkProps) {
   return (
-    <svg className={className} viewBox="0 0 100 100" aria-hidden="true">
-      {/* stem */}
-      <rect x="24" y="20" width="13" height="60" rx="2" fill="currentColor" />
-      {/* bowl: top bar, right side, and waist bar enclose the counter */}
-      <rect x="37" y="20" width="28" height="13" rx="2" fill="currentColor" />
-      <rect x="52" y="20" width="13" height="35" fill="currentColor" />
-      <rect x="37" y="42" width="28" height="13" rx="2" fill="currentColor" />
-      {/* leg (diagonal accent) */}
-      <polygon points="50,55 65,55 80,80 65,80" fill={mono ? 'currentColor' : 'var(--color-indigo-400)'} />
+    <svg className={className} viewBox="21 18 63 63" fill="none" aria-hidden="true">
+      {/* solid corner blocks: merge stem with the bowl's top bar and waist bar */}
+      <rect x="30.5" y="19.5" width="11" height="11" fill="currentColor" />
+      <rect x="30.5" y="45.5" width="11" height="11" fill="currentColor" />
+      <g
+        stroke="currentColor"
+        strokeWidth={11}
+        strokeLinecap="butt"
+        strokeLinejoin="round"
+        strokeDasharray="18 7"
+      >
+        <path d="M36 25 V75" />
+        <path d="M36 25 H50 a13 13 0 0 1 0 26 H36" />
+      </g>
+      <path
+        d="M50 51 L70 75"
+        stroke={mono ? 'currentColor' : 'var(--color-indigo-400)'}
+        strokeWidth={11}
+        strokeLinecap="butt"
+        strokeDasharray="18 7"
+      />
     </svg>
   )
 }
