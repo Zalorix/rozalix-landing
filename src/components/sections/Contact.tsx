@@ -307,11 +307,11 @@ export function Contact() {
                   .form-foot .fine:
                     font-size:13px; color:var(--slate-400); max-width:30ch
                 */}
-                <div className="flex items-center justify-between gap-[16px] mt-[4px]">
-                  <p className="text-[13px] text-slate-400 max-w-[30ch]">
+                <div className="flex items-center justify-between gap-[16px] mt-[4px] max-[560px]:flex-col max-[560px]:items-stretch max-[560px]:gap-[14px]">
+                  <p className="text-[13px] text-slate-400 max-w-[30ch] max-[560px]:max-w-none">
                     By submitting, you agree to be contacted about your project.
                   </p>
-                  <Button type="submit" variant="primary" size="lg">
+                  <Button type="submit" variant="primary" size="lg" className="max-[560px]:w-full">
                     Send inquiry <ArrowRight className="arr" strokeWidth={1.75} />
                   </Button>
                 </div>
