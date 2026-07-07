@@ -9,21 +9,24 @@ function timeLeft(endsAt: string) {
   if (diff <= 0) return null
   const days = Math.floor(diff / 86_400_000)
   const hours = Math.floor((diff % 86_400_000) / 3_600_000)
-  return { days, hours }
+  const minutes = Math.floor((diff % 3_600_000) / 60_000)
+  const seconds = Math.floor((diff % 60_000) / 1_000)
+  return { days, hours, minutes, seconds }
 }
 
 /**
  * Real, time-boxed promo banner shown at the top of the homepage — disappears
  * on its own once `currentPromo.endsAt` passes, so it's never left stale.
+ * Ticks every second so it visibly counts down rather than looking static.
  */
 export function PromoHeaderBar() {
-  const [left, setLeft] = useState<{ days: number; hours: number } | null>(null)
+  const [left, setLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null)
 
   useEffect(() => {
     if (!currentPromo.active) return
     const tick = () => setLeft(timeLeft(currentPromo.endsAt))
     tick()
-    const id = setInterval(tick, 60_000)
+    const id = setInterval(tick, 1_000)
     return () => clearInterval(id)
   }, [])
 
@@ -41,8 +44,9 @@ export function PromoHeaderBar() {
         <Zap className="h-[15px] w-[15px] shrink-0" strokeWidth={2} aria-hidden="true" />
         <span className="font-semibold">{currentPromo.headline}.</span>
         <span className="hidden text-white/85 sm:inline">{currentPromo.description}</span>
-        <span className="whitespace-nowrap font-semibold underline underline-offset-2">
-          Ends in {left.days}d {left.hours}h
+        <span className="whitespace-nowrap font-semibold underline underline-offset-2 tabular-nums">
+          Ends in {left.days}d {left.hours}h {String(left.minutes).padStart(2, '0')}m{' '}
+          {String(left.seconds).padStart(2, '0')}s
         </span>
       </a>
     </div>

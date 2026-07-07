@@ -168,7 +168,7 @@ export function ProcessTimeline({
       className="
         relative mt-[56px]
         grid gap-[24px]
-        [grid-template-columns:repeat(5,1fr)]
+        [grid-template-columns:repeat(6,1fr)]
         max-[860px]:[grid-template-columns:1fr] max-[860px]:gap-0
       "
     >

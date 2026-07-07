@@ -1,6 +1,6 @@
 import { Hero } from '@/components/sections/Hero'
 import { Stats } from '@/components/sections/Stats'
-import { Services } from '@/components/sections/Services'
+// import { Services } from '@/components/sections/Services' // hidden for now — redundant with Process; slot reserved for a future Products/Portfolio section
 import { Process } from '@/components/sections/Process'
 // import { Work } from '@/components/sections/Work' // hidden for now
 import { Why } from '@/components/sections/Why'
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
-      <Services />
+      {/* <Services /> hidden for now — redundant with Process; slot reserved for a future Products/Portfolio section */}
       <Process />
       {/* <Work /> hidden for now */}
       <Why />

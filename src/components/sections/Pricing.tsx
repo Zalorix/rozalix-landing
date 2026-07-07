@@ -194,8 +194,10 @@ export function Pricing() {
           <div className="flex flex-wrap items-baseline gap-[14px] mb-[28px]">
             <h3 className="font-sans text-[22px] font-semibold tracking-[0]">Care plans</h3>
             <p className="text-[15px] text-slate-600">
-              Optional monthly support to keep your site fast, secure, and up to date. New
-              clients get 2 months of Premium free, on us.
+              Optional monthly support to keep your site fast, secure, and up to date. Every
+              project includes a free trial of Premium — from 2 months on Launch up to 4 on
+              E-commerce (Custom is scoped per contract) — so you can try the full CRM + AI
+              receptionist before committing to a plan.
             </p>
           </div>
 

@@ -92,20 +92,18 @@ export function Footer() {
             <h4 className={colHeadClass} style={{ fontFamily: 'var(--font-sans)' }}>
               Studio
             </h4>
-            <a href="#services" className={colLinkClass}>Services</a>
             <a href="#process"  className={colLinkClass}>Process</a>
             <a href="#why"      className={colLinkClass}>Why Rozalix</a>
           </div>
 
-          {/* ── Services column ── */}
+          {/* ── Products column ── */}
           <div className="flex flex-col">
             <h4 className={colHeadClass} style={{ fontFamily: 'var(--font-sans)' }}>
-              Services
+              Products
             </h4>
-            <a href="#services" className={colLinkClass}>Strategy &amp; UX</a>
-            <a href="#services" className={colLinkClass}>Design</a>
-            <a href="#services" className={colLinkClass}>Development</a>
-            <a href="#services" className={colLinkClass}>Performance &amp; SEO</a>
+            <a href="/products/crm" className={colLinkClass}>Rozalix CRM</a>
+            <a href="/products/webchat" className={colLinkClass}>Rozalix AI Webchat</a>
+            <a href="/products/ai-sms" className={colLinkClass}>Rozalix AI SMS</a>
           </div>
 
           {/* ── Get in touch column ── */}
