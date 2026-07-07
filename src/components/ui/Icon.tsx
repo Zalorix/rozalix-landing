@@ -1,4 +1,4 @@
-import { Compass, PenTool, Code, Gauge, Rocket, LifeBuoy, ShieldCheck, Zap, Check, Repeat2, Info, type LucideIcon } from 'lucide-react'
+import { Compass, PenTool, Code, Gauge, Rocket, LifeBuoy, ShieldCheck, Zap, Check, Repeat2, Info, Bot, type LucideIcon } from 'lucide-react'
 
 const map: Record<string, LucideIcon> = {
   compass: Compass,
@@ -12,6 +12,7 @@ const map: Record<string, LucideIcon> = {
   check: Check,
   'repeat-2': Repeat2,
   info: Info,
+  bot: Bot,
 }
 
 export function Icon({ name, className }: { name: string; className?: string }) {

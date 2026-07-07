@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { TrendingUp, ShoppingBag, Wallet, type LucideIcon } from 'lucide-react'
+import { TrendingUp, MessageCircle, Wallet, type LucideIcon } from 'lucide-react'
 
 type Chip = {
   label: string
@@ -27,9 +27,9 @@ const CHIPS: Chip[] = [
     floatDelay: '0s',
   },
   {
-    label: 'New customers',
-    value: '+24%',
-    Icon: ShoppingBag,
+    label: 'AI response',
+    value: 'Instant',
+    Icon: MessageCircle,
     pos: 'bottom-[-20px] left-[-26px] max-[980px]:left-[8px] max-[560px]:bottom-[-42px]',
     from: 'translate(44px, -32px) scale(0.55)',
     enterDelay: '0.16s',

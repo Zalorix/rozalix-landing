@@ -922,6 +922,18 @@ a.work-card:hover .work-card__shot > * { transform: scale(1.04); }
   .rz-drift { animation: none; }
 }
 
+/* "Why" panel — cross-fade when switching between selected proof points */
+@keyframes rz-fade-in {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.rz-fade-in {
+  animation: rz-fade-in 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rz-fade-in { animation: none; }
+}
+
 /* Timeline "reached Launch" celebration — trophy pop + confetti burst */
 @keyframes rz-trophy {
   0%   { transform: scale(0) rotate(-16deg); opacity: 0; }
