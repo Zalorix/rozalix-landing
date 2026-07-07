@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { PricingScroller } from '@/components/sections/PricingScroller'
-import { pricingTiers, carePlans } from '@/lib/content'
+import { pricingTiers, carePlans, discountedPrice } from '@/lib/content'
 
 // ─── Helper: split "₱1,500/mo" into price and "/mo" suffix ────────────────────
 function CarePrice({ raw }: { raw: string }) {
@@ -102,18 +102,40 @@ export function Pricing() {
                   .amt.sm: font-size:26px
                   Growth (featured) uses .amt (34px); all others use .amt.sm (26px)
                 */}
-                <div className="mt-[16px] mb-[6px] flex items-baseline gap-[6px]">
+                <div className="mt-[16px] mb-[6px] flex flex-wrap items-baseline gap-[6px]">
                   {tier.from && (
                     <span className="text-[13px] font-medium text-slate-400">from</span>
                   )}
-                  <span
-                    className={[
-                      'font-display font-bold tracking-[-0.02em] text-ink-900',
-                      tier.featured ? 'text-[34px]' : 'text-[26px]',
-                    ].join(' ')}
-                  >
-                    {tier.price}
-                  </span>
+                  {(() => {
+                    const promoPrice = discountedPrice(tier.price)
+                    if (!promoPrice) {
+                      return (
+                        <span
+                          className={[
+                            'font-display font-bold tracking-[-0.02em] text-ink-900',
+                            tier.featured ? 'text-[34px]' : 'text-[26px]',
+                          ].join(' ')}
+                        >
+                          {tier.price}
+                        </span>
+                      )
+                    }
+                    return (
+                      <>
+                        <span className="text-[15px] font-medium text-slate-400 line-through">
+                          {tier.price}
+                        </span>
+                        <span
+                          className={[
+                            'font-display font-bold tracking-[-0.02em] text-indigo-deeper',
+                            tier.featured ? 'text-[34px]' : 'text-[26px]',
+                          ].join(' ')}
+                        >
+                          {promoPrice}
+                        </span>
+                      </>
+                    )
+                  })()}
                 </div>
 
                 {/*
@@ -172,7 +194,8 @@ export function Pricing() {
           <div className="flex flex-wrap items-baseline gap-[14px] mb-[28px]">
             <h3 className="font-sans text-[22px] font-semibold tracking-[0]">Care plans</h3>
             <p className="text-[15px] text-slate-600">
-              Optional monthly support to keep your site fast, secure, and up to date.
+              Optional monthly support to keep your site fast, secure, and up to date. New
+              clients get 2 months of Premium free, on us.
             </p>
           </div>
 
