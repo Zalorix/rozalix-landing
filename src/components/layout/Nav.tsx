@@ -6,6 +6,7 @@ import { RMark } from '@/components/ui/RMark'
 import { Button } from '@/components/ui/Button'
 import { navLinks } from '@/lib/nav'
 import { MobileDrawer } from '@/components/layout/MobileDrawer'
+import { NavProductsDropdown } from '@/components/layout/NavProductsDropdown'
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -73,8 +74,25 @@ export function Nav() {
           </a>
 
           {/* Desktop nav links — hidden at ≤920px, shown above */}
-          <div className="max-[920px]:hidden flex gap-[2px]">
-            {navLinks.map((link) => {
+          <div className="max-[920px]:hidden flex items-center gap-[2px]">
+            {navLinks.slice(0, 2).map((link) => {
+              const active = activeId !== '' && link.href === `#${activeId}`
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'true' : undefined}
+                  className={[
+                    'text-[15px] font-medium px-[14px] py-2 rounded-sm transition-[color,background] duration-150 hover:bg-slate-100',
+                    active ? 'text-indigo' : 'text-slate-600 hover:text-ink-900',
+                  ].join(' ')}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
+            <NavProductsDropdown />
+            {navLinks.slice(2).map((link) => {
               const active = activeId !== '' && link.href === `#${activeId}`
               return (
                 <a

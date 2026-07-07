@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { RMark } from '@/components/ui/RMark'
 import { Button } from '@/components/ui/Button'
-import { navLinks } from '@/lib/nav'
+import { navLinks, productLinks } from '@/lib/nav'
 
 type MobileDrawerProps = {
   open: boolean
@@ -81,6 +81,21 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
 
         {/* Nav links */}
         {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={onClose}
+            className="text-[17px] font-medium text-ink-900 px-3 py-[14px] rounded-sm hover:bg-slate-100 transition-colors duration-150"
+          >
+            {link.label}
+          </a>
+        ))}
+
+        {/* Products */}
+        <div className="mt-[10px] mb-[2px] px-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-slate-400">
+          Products
+        </div>
+        {productLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}

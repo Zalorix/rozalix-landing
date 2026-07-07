@@ -29,8 +29,8 @@ export function Process() {
             top:0; bottom:0; left:26px; right:auto; width:2px; height:auto;
             background:linear-gradient(180deg, var(--indigo-200), var(--slate-200))
         */}
-        {/* celebrateIndex 3 = "04 Launch" — trophy + confetti when the glow arrives */}
-        <ProcessTimeline celebrateIndex={3}>
+        {/* celebrateIndex 4 = "05 Launch" — trophy + confetti when the glow arrives */}
+        <ProcessTimeline celebrateIndex={4}>
           {processSteps.map((step, i) => (
             /*
               Each .step wrapped in Reveal for staggered entrance.
