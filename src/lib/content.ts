@@ -103,14 +103,14 @@ export const processSteps: ProcessStep[] = [
 export const pricingTiers: PricingTier[] = [
   {
     name: 'Launch',
-    price: '₱15,000',
+    price: '₱19,999',
     from: true,
     best: 'A clean, professional presence, fast.',
     features: [
       { icon: 'check', text: 'Up to 5 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Up to 3 design iterations' },
-      { icon: 'check', text: 'CMS + lead/contact form' },
-      { icon: 'check', text: 'On-page SEO & analytics setup' },
+      { icon: 'repeat-2', text: 'Up to 2 rounds of revisions' },
+      { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
+      { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: 'SSL + 1-year hosting · 60-day support' },
       { icon: 'check', text: '~1–2 weeks' },
     ],
@@ -118,16 +118,16 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Business',
-    price: '₱25,000',
+    price: '₱29,999',
     from: true,
     best: 'More room to grow, with content control.',
     featured: true,
     features: [
-      { icon: 'check', text: 'Up to ~8 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Up to 4 design iterations' },
-      { icon: 'check', text: 'Editable CMS / blog' },
-      { icon: 'check', text: 'On-page SEO + analytics' },
-      { icon: 'check', text: 'Social & Google integrations' },
+      { icon: 'check', text: 'Up to 10 pages, custom mobile-first design' },
+      { icon: 'repeat-2', text: 'Up to 3 rounds of revisions' },
+      { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
+      { icon: 'check', text: 'Professional copywriting + full SEO' },
+      { icon: 'check', text: '1 integration (Meta, Notion, and more)' },
       { icon: 'check', text: 'SSL + 1-year hosting · 75-day support' },
       { icon: 'check', text: '~2–4 weeks' },
     ],
@@ -135,15 +135,15 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'Growth',
-    price: '₱35,000',
+    price: '₱39,999',
     from: true,
     best: 'Depth, content control, and polish.',
     features: [
-      { icon: 'check', text: 'Up to ~12 pages, bespoke design + wireframes' },
-      { icon: 'repeat-2', text: 'Up to 5 design iterations' },
-      { icon: 'check', text: 'Editable CMS / blog' },
-      { icon: 'check', text: 'Full SEO + copywriting assist' },
-      { icon: 'check', text: 'Social & Google integrations' },
+      { icon: 'check', text: 'Up to 15 pages, custom mobile-first design' },
+      { icon: 'repeat-2', text: 'Up to 4 rounds of revisions' },
+      { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
+      { icon: 'check', text: 'Professional copywriting + full SEO' },
+      { icon: 'check', text: '2 integrations (Meta, Notion, and more)' },
       { icon: 'check', text: 'Admin training · 90-day support' },
       { icon: 'check', text: '~4–6 weeks' },
     ],
@@ -151,16 +151,16 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'E-commerce',
-    price: '₱60,000',
+    price: '₱119,999',
     from: true,
     best: 'Everything you need to sell online.',
     features: [
-      { icon: 'check', text: 'Up to ~100 products' },
-      { icon: 'repeat-2', text: 'Up to 5 design iterations' },
-      { icon: 'check', text: 'GCash / Maya / PayMongo + card gateway' },
-      { icon: 'check', text: 'Inventory & order management' },
-      { icon: 'check', text: 'Customer accounts' },
-      { icon: 'check', text: 'Everything in Growth' },
+      { icon: 'check', text: 'Product catalog + core pages' },
+      { icon: 'repeat-2', text: 'Up to 5 rounds of revisions' },
+      { icon: 'check', text: 'Editable CMS + product/order management' },
+      { icon: 'check', text: 'GCash / Maya / PayPal + card gateway' },
+      { icon: 'check', text: 'Inventory, customer accounts + 1 integration' },
+      { icon: 'check', text: 'Admin training · 90–120 day support' },
       { icon: 'check', text: '~5–8 weeks' },
     ],
     cta: 'Get a quote',
@@ -168,14 +168,14 @@ export const pricingTiers: PricingTier[] = [
   {
     name: 'Custom',
     price: "Let's talk",
-    best: 'Web apps, dashboards & complex builds. From ₱120,000',
+    best: 'Web apps, dashboards & complex builds. From ₱299,999',
     features: [
       { icon: 'check', text: 'Discovery & UX strategy' },
-      { icon: 'repeat-2', text: 'Unlimited design iterations (within scope)' },
-      { icon: 'check', text: 'Bespoke design + custom backend' },
-      { icon: 'check', text: 'Role-based access' },
-      { icon: 'check', text: 'Third-party / CRM integrations' },
-      { icon: 'check', text: 'Scalable modern stack · dedicated support' },
+      { icon: 'repeat-2', text: 'Unlimited revisions (within agreed scope)' },
+      { icon: 'check', text: 'Bespoke admin + custom backend' },
+      { icon: 'check', text: 'Role-based access, dedicated contact' },
+      { icon: 'check', text: 'Unlimited / custom API integrations' },
+      { icon: 'check', text: 'Scalable modern stack · support per contract' },
       { icon: 'check', text: '~8–12+ weeks' },
     ],
     cta: 'Book a consultation',
@@ -187,17 +187,56 @@ export const pricingTiers: PricingTier[] = [
 export const carePlans: CarePlan[] = [
   {
     name: 'Essential',
-    price: '₱1,500/mo',
-    blurb: 'Managed hosting, SSL, updates, security scans, backups, uptime monitoring, and a monthly report.',
+    price: '₱999/mo',
+    blurb: 'Managed hosting, SSL, security scans, backups, uptime monitoring, and ongoing CMS access to keep editing your site.',
   },
   {
     name: 'Growth',
-    price: '₱3,500/mo',
-    blurb: 'Everything in Essential, plus ~3 hrs of content/design edits, SEO monitoring, analytics review, and priority email support.',
+    price: '₱2,499/mo',
+    blurb: 'Everything in Essential, plus your CRM (leads inbox & project tracker), ~2 hrs of edits/month, and up to 3 team members.',
   },
   {
     name: 'Premium',
-    price: '₱6,500/mo',
-    blurb: 'Everything in Growth, plus ~6 hrs of dev time, performance & conversion optimization, priority support, and a quarterly strategy call.',
+    price: '₱5,499/mo',
+    blurb: 'Everything in Growth, plus your AI receptionist (webchat, bookings & assistant), ~4 hrs of dev time/month, and up to 10 team members.',
   },
 ]
+
+// ─── Current promotion ────────────────────────────────────────────────────────
+//
+// One real, time-boxed offer at a time — update by hand each cycle, don't
+// auto-rotate. `endsAt` must be a genuine end date; the header/banner hide
+// themselves once it passes (see PromoHeaderBar.tsx), so never leave a
+// stale/expired promo live. When `kind` is 'percent-off', the pricing cards
+// show the real discounted price (see `discountedPrice` below) — the
+// struck-through price is always the genuine current list price, never an
+// invented "was" figure. Suggested rotation, each a real bounded window
+// (~4 weeks):
+//   1. Launch discount (this one)       — 10% off, real cut of the real price.
+//   2. Bonus revision round             — "+1 free revision round, any tier"
+//   3. Bonus Care Plan month            — "+1 free month" (2mo -> 3mo)
+export const currentPromo = {
+  active: true,
+  kind: 'percent-off' as const,
+  percent: 10,
+  headline: '10% off your first project',
+  description: 'For a limited time, take 10% off any project tier — book your consultation now to lock in the rate.',
+  endsAt: '2026-08-04T23:59:59+08:00',
+}
+
+/** Parse a "₱20,000" price string into a number. Returns null for non-numeric prices ("Let's talk"). */
+function parsePeso(price: string): number | null {
+  const digits = price.replace(/[^\d]/g, '')
+  return digits ? Number(digits) : null
+}
+
+/** Apply the current promo's percent-off to a "₱20,000"-style price. Returns null if not applicable. */
+export function discountedPrice(price: string): string | null {
+  if (!currentPromo.active || currentPromo.kind !== 'percent-off') return null
+  const amount = parsePeso(price)
+  if (amount === null) return null
+  // Round to the nearest peso (not the nearest 100) so the charm-priced
+  // "...999" ending carries through into the discounted price too.
+  const cut = Math.round(amount * (1 - currentPromo.percent / 100))
+  return `₱${cut.toLocaleString('en-PH')}`
+}

@@ -98,7 +98,7 @@ export function Stats() {
         >
           {/* Cell 1: lead with the affordable starting price */}
           <StaticStat label="Starting price" delay={0}>
-            ₱15k
+            ₱19,999
           </StaticStat>
 
           {/* Cell 2: static "Free" — affordable + free to start, one-two punch */}

@@ -3,13 +3,11 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { Wrap } from '@/components/ui/Section'
 import { HeroChips } from '@/components/sections/HeroChips'
+import { PromoHeaderBar } from '@/components/sections/PromoBanner'
 
 export function Hero() {
   return (
-    <header
-      id="top"
-      className="relative overflow-hidden pt-[calc(var(--nav-h)+56px)] max-[560px]:pt-[calc(var(--nav-h)+20px)] pb-[104px]"
-    >
+    <header id="top" className="relative overflow-hidden pt-[var(--nav-h)] pb-[104px]">
       {/* Background decoration — matches .hero::before gradient blob */}
       <div
         aria-hidden="true"
@@ -20,7 +18,10 @@ export function Hero() {
         }}
       />
 
-      <Wrap>
+      {/* Sits flush under the fixed nav; self-hides once the promo ends. */}
+      <PromoHeaderBar />
+
+      <Wrap className="pt-[56px] max-[560px]:pt-[20px]">
         {/*
           .hero__inner:
             display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center
