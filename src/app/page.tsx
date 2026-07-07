@@ -4,6 +4,7 @@ import { Stats } from '@/components/sections/Stats'
 import { Process } from '@/components/sections/Process'
 // import { Work } from '@/components/sections/Work' // hidden for now
 import { Why } from '@/components/sections/Why'
+import { Capture } from '@/components/sections/Capture'
 import { Pricing } from '@/components/sections/Pricing'
 import { CtaBand } from '@/components/sections/CtaBand'
 import { Contact } from '@/components/sections/Contact'
@@ -17,6 +18,7 @@ export default function Home() {
       <Process />
       {/* <Work /> hidden for now */}
       <Why />
+      <Capture />
       <Pricing />
       <CtaBand />
       <Contact />

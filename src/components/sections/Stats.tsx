@@ -1,45 +1,6 @@
 'use client'
 import { Reveal } from '@/components/ui/Reveal'
 import { Wrap } from '@/components/ui/Section'
-import { useCountUp } from '@/components/ui/useCountUp'
-
-function AnimatedStat({
-  target,
-  suffix,
-  label,
-  delay = 0,
-}: {
-  target: number
-  suffix: string
-  label: string
-  delay?: number
-}) {
-  const { ref, value } = useCountUp(target)
-
-  return (
-    <Reveal className="stat text-center relative" delay={delay}>
-      {/*
-        .stat__num:
-          font-family: var(--font-display); font-weight: 700; font-size: 48px;
-          letter-spacing: -.03em; color: var(--indigo); line-height: 1
-      */}
-      <div
-        ref={ref}
-        className="font-display text-[48px] max-[760px]:text-[40px] font-bold tracking-[-0.03em] text-indigo leading-none"
-      >
-        {value}{suffix}
-      </div>
-      {/*
-        .stat__lbl:
-          font-size: 13px; font-weight: 600; text-transform: uppercase;
-          letter-spacing: .07em; color: var(--slate-600); margin-top: 12px
-      */}
-      <div className="mt-3 text-[13px] font-semibold uppercase tracking-[0.07em] text-slate-600">
-        {label}
-      </div>
-    </Reveal>
-  )
-}
 
 function StaticStat({
   children,
@@ -111,8 +72,10 @@ export function Stats() {
             1–2<span style={{ fontSize: '0.5em', fontWeight: 600 }}> wks</span>
           </StaticStat>
 
-          {/* Cell 4: animated "100%" — looks great on phones */}
-          <AnimatedStat target={100} suffix="%" label="Looks great on phones" delay={240} />
+          {/* Cell 4: static "24/7" — leans into the AI/communication positioning */}
+          <StaticStat label="AI answers, day and night" delay={240}>
+            24/7
+          </StaticStat>
         </div>
       </Wrap>
     </section>

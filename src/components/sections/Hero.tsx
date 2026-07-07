@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Lock, Sparkles, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Lock, MessageCircle, Sparkles, Star } from 'lucide-react'
 import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { Wrap } from '@/components/ui/Section'
@@ -61,21 +61,21 @@ export function Hero() {
             <Reveal delay={90}>
               <h1
                 className="
-                  mt-[24px] mb-[22px] max-w-[14ch]
+                  mt-[24px] mb-[22px] max-w-[15ch]
                   text-[64px] max-[980px]:text-[52px] max-[560px]:text-[40px]
                   leading-[1.04] tracking-[-0.035em]
                 "
               >
-                Websites that turn visitors into{' '}
-                <em className="not-italic text-indigo">customers</em>.
+                Designed to impress. Wired to never miss a{' '}
+                <em className="not-italic text-indigo">customer</em>.
               </h1>
             </Reveal>
 
             <Reveal delay={180}>
               <p className="text-[20px] text-slate-600 max-w-[46ch]">
-                We design and build fast, custom websites that get your business
-                found, build trust, and turn visitors into paying customers — and
-                grow with you as you scale.
+                We design stunning, custom websites — then back them with an AI
+                that answers instantly, tracks every lead, and never lets a slow
+                reply cost you a customer.
               </p>
             </Reveal>
 
@@ -131,7 +131,7 @@ export function Hero() {
                   box-shadow:var(--shadow-lift); overflow:hidden
               */}
               <div
-                className="overflow-hidden rounded-[14px] border border-slate-200 bg-white shadow-[0_28px_70px_-28px_rgba(79,70,229,0.55),var(--shadow-lift)]"
+                className="relative overflow-hidden rounded-[14px] border border-slate-200 bg-white shadow-[0_28px_70px_-28px_rgba(79,70,229,0.55),var(--shadow-lift)]"
               >
                 {/*
                   .browser__bar:
@@ -234,6 +234,16 @@ export function Hero() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 rounded-[14px] bg-white/25"
               />
+
+              {/* AI chat launcher — sits above the veil so it reads crisp, like the floating chips.
+                  Offset well clear of the "Revenue" chip's footprint (which hangs off the mock's
+                  bottom-right corner) so the two don't overlap. */}
+              <div className="absolute bottom-[76px] right-[16px] max-[560px]:hidden">
+                <div className="relative grid h-[38px] w-[38px] place-items-center rounded-full bg-indigo text-white shadow-[0_10px_22px_-6px_rgba(79,70,229,0.55)]">
+                  <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2} />
+                  <span className="absolute -right-[1px] -top-[1px] h-[10px] w-[10px] rounded-full border-2 border-white bg-success" />
+                </div>
+              </div>
 
               {/* Floating growth chips — fan in/out on scroll + gentle float */}
               <HeroChips />
