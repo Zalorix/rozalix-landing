@@ -29,13 +29,15 @@ const pillars = [
 
 export function Capture() {
   return (
-    <Section id="capture">
+    <Section id="capture" className="!pb-[56px]">
       <Wrap>
         <Reveal className="mb-[52px] max-w-[680px]">
           <Eyebrow>Beyond the website</Eyebrow>
-          <h2 className="my-[14px] text-[40px]">The part everyone else forgets.</h2>
+          <h2 className="my-[14px] text-[40px]">
+            Did you know slow replies lose more customers than bad design?
+          </h2>
           <p className="text-[19px] text-slate-600">
-            A gorgeous site gets someone to look. This is what makes them stay — and buy.
+            A gorgeous site gets someone to look. Answering first is what makes them stay — and buy.
           </p>
         </Reveal>
 

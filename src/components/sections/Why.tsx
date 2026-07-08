@@ -23,13 +23,6 @@ const props = [
     panelCaption: "The polish of a big agency, without the bloated process, the retainer, or an invoice that grows after you've said yes.",
   },
   {
-    icon: 'zap',
-    title: 'Fast, transparent delivery',
-    body: 'No "still in progress" for three months with no update. You know your timeline before you sign, and exactly where things stand every step after.',
-    panelHeadline: 'Weeks, not months of silence.',
-    panelCaption: "Clear scope, clear timeline, and a real person to ask — so you're never wondering if your project stalled.",
-  },
-  {
     icon: 'gauge',
     title: 'Built to perform',
     body: "A beautiful site nobody can find, or one that takes six seconds to load on a phone, doesn't grow anything. Yours is mobile-first and search-ready before it goes live.",
@@ -94,29 +87,6 @@ function QuoteProof() {
   )
 }
 
-function TimelineProof() {
-  const stages = ['Brief', 'Design', 'Build', 'Launch']
-  return (
-    <div className="rounded-[10px] border border-white/10 bg-black/25 px-[18px] py-[26px]">
-      <div className="relative flex items-center justify-between">
-        <div className="absolute left-[8px] right-[8px] top-1/2 h-[2px] -translate-y-1/2 bg-white/15" />
-        <div className="absolute left-[8px] top-1/2 h-[2px] w-[62%] -translate-y-1/2 bg-indigo-400" />
-        {stages.map((s, i) => (
-          <div key={s} className="relative flex flex-col items-center gap-[10px]">
-            <span
-              className={`h-[16px] w-[16px] rounded-full border-2 ${
-                i < 3 ? 'border-indigo-400 bg-indigo-400' : 'border-white/30 bg-[#0F172A]'
-              }`}
-            />
-            <span className="text-[11.5px] font-medium text-slate-300">{s}</span>
-          </div>
-        ))}
-      </div>
-      <p className="mt-[18px] text-center text-[13px] text-slate-400">1–2 weeks for a landing page, up to 8–12 for a full web app.</p>
-    </div>
-  )
-}
-
 function PerformanceProof() {
   const points = ['Mobile-first, every screen size', 'SEO-ready on day one', 'Fast by default, no bloat']
   return (
@@ -149,7 +119,7 @@ function TrainedProof() {
   )
 }
 
-const proofVisuals = [CodeProof, QuoteProof, TimelineProof, PerformanceProof, TrainedProof]
+const proofVisuals = [CodeProof, QuoteProof, PerformanceProof, TrainedProof]
 
 export function Why() {
   const [active, setActive] = useState(0)
