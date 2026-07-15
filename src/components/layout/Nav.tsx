@@ -6,7 +6,7 @@ import { RMark } from '@/components/ui/RMark'
 import { Button } from '@/components/ui/Button'
 import { navLinks } from '@/lib/nav'
 import { MobileDrawer } from '@/components/layout/MobileDrawer'
-import { NavProductsDropdown } from '@/components/layout/NavProductsDropdown'
+// import { NavProductsDropdown } from '@/components/layout/NavProductsDropdown' // hidden for now — product pages not linked yet
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -91,7 +91,7 @@ export function Nav() {
                 </a>
               )
             })}
-            <NavProductsDropdown />
+            {/* <NavProductsDropdown /> hidden for now — product pages not linked yet */}
             {navLinks.slice(2).map((link) => {
               const active = activeId !== '' && link.href === `#${activeId}`
               return (
