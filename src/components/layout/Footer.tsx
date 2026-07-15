@@ -48,8 +48,8 @@ export function Footer() {
       style={{ background: 'var(--color-ink-900)', color: '#fff' }}
     >
       <Wrap>
-        {/* 4-column grid → 2-col at ≤860px → 1-col at ≤480px */}
-        <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-10 max-[860px]:grid-cols-[1fr_1fr] max-[480px]:grid-cols-[1fr]">
+        {/* 3-column grid → 2-col at ≤860px → 1-col at ≤480px */}
+        <div className="grid grid-cols-[1.6fr_1fr_1fr] gap-10 max-[860px]:grid-cols-[1fr_1fr] max-[480px]:grid-cols-[1fr]">
 
           {/* ── Brand column ── */}
           <div className="max-[860px]:col-span-full">
@@ -96,7 +96,7 @@ export function Footer() {
             <a href="#why"      className={colLinkClass}>Why Rozalix</a>
           </div>
 
-          {/* ── Products column ── */}
+          {/* ── Products column — hidden for now — product pages not linked yet ──
           <div className="flex flex-col">
             <h4 className={colHeadClass} style={{ fontFamily: 'var(--font-sans)' }}>
               Products
@@ -105,6 +105,7 @@ export function Footer() {
             <a href="/products/webchat" className={colLinkClass}>Rozalix AI Webchat</a>
             <a href="/products/ai-sms" className={colLinkClass}>Rozalix AI SMS</a>
           </div>
+          */}
 
           {/* ── Get in touch column ── */}
           <div className="flex flex-col">

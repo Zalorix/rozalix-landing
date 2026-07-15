@@ -1,8 +1,9 @@
-import { Zap, Inbox, FileText, Clock, ArrowRight } from 'lucide-react'
+import { Zap, Inbox, FileText, Clock } from 'lucide-react'
+// import { ArrowRight } from 'lucide-react' // hidden for now — product pages not linked yet
 import { Section, Wrap } from '@/components/ui/Section'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Reveal } from '@/components/ui/Reveal'
-import { productLinks } from '@/lib/nav'
+// import { productLinks } from '@/lib/nav' // hidden for now — product pages not linked yet
 
 const pillars = [
   {
@@ -55,6 +56,7 @@ export function Capture() {
           ))}
         </div>
 
+        {/* "See it in action" product links — hidden for now — product pages not linked yet
         <Reveal delay={320} className="mt-[44px] flex flex-wrap items-center gap-x-[28px] gap-y-[14px]">
           <span className="text-[14px] font-semibold uppercase tracking-[0.08em] text-slate-400">
             See it in action
@@ -70,6 +72,7 @@ export function Capture() {
             </a>
           ))}
         </Reveal>
+        */}
       </Wrap>
     </Section>
   )

@@ -4,7 +4,8 @@ import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { RMark } from '@/components/ui/RMark'
 import { Button } from '@/components/ui/Button'
-import { navLinks, productLinks } from '@/lib/nav'
+import { navLinks } from '@/lib/nav'
+// import { productLinks } from '@/lib/nav' // hidden for now — product pages not linked yet
 
 type MobileDrawerProps = {
   open: boolean
@@ -91,7 +92,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
           </a>
         ))}
 
-        {/* Products */}
+        {/* Products — hidden for now — product pages not linked yet
         <div className="mt-[10px] mb-[2px] px-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-slate-400">
           Products
         </div>
@@ -104,7 +105,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps) {
           >
             {link.label}
           </a>
-        ))}
+        ))} */}
 
         {/* CTA */}
         <div className="mt-4">
