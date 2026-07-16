@@ -33,6 +33,14 @@ export interface CarePlan {
   blurb: string
 }
 
+export interface PlatformPlan {
+  name: string
+  price: string
+  blurb: string
+  seatNote: string
+  trialNote: string
+}
+
 // ─── Services ─────────────────────────────────────────────────────────────────
 
 export const services: Service[] = [
@@ -116,7 +124,7 @@ export const pricingTiers: PricingTier[] = [
       { icon: 'repeat-2', text: 'Up to 2 rounds of revisions' },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
-      { icon: 'check', text: '2 months of Care Plan (Premium) free' },
+      { icon: 'check', text: '1 year of domain & hosting included' },
       { icon: 'check', text: '~1–2 weeks' },
     ],
     cta: 'Start a project',
@@ -133,7 +141,7 @@ export const pricingTiers: PricingTier[] = [
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '1 integration (Meta, Notion, and more)' },
-      { icon: 'check', text: '2.5 months of Care Plan (Premium) free' },
+      { icon: 'check', text: '1 year of domain & hosting included' },
       { icon: 'check', text: '~2–4 weeks' },
     ],
     cta: 'Start a project',
@@ -149,7 +157,7 @@ export const pricingTiers: PricingTier[] = [
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '2 integrations (Meta, Notion, and more)' },
-      { icon: 'check', text: 'Admin training · 3 months of Care Plan (Premium) free' },
+      { icon: 'check', text: 'Admin training · 1 year of domain & hosting included' },
       { icon: 'check', text: '~4–6 weeks' },
     ],
     cta: 'Start a project',
@@ -165,7 +173,7 @@ export const pricingTiers: PricingTier[] = [
       { icon: 'check', text: 'Editable CMS + product/order management' },
       { icon: 'check', text: 'GCash / Maya / PayPal + card gateway' },
       { icon: 'check', text: 'Inventory, customer accounts + 1 integration' },
-      { icon: 'check', text: 'Admin training · 4 months of Care Plan (Premium) free' },
+      { icon: 'check', text: 'Admin training · 1 year of domain & hosting included' },
       { icon: 'check', text: '~5–8 weeks' },
     ],
     cta: 'Get a quote',
@@ -180,7 +188,7 @@ export const pricingTiers: PricingTier[] = [
       { icon: 'check', text: 'Bespoke admin + custom backend' },
       { icon: 'check', text: 'Role-based access, dedicated contact' },
       { icon: 'check', text: 'Unlimited / custom API integrations' },
-      { icon: 'check', text: 'Scalable modern stack · Care Plan scoped per contract' },
+      { icon: 'check', text: 'Scalable modern stack · 1 year of domain & hosting included' },
       { icon: 'check', text: '~8–12+ weeks' },
     ],
     cta: 'Book a consultation',
@@ -188,24 +196,41 @@ export const pricingTiers: PricingTier[] = [
 ]
 
 // ─── Care Plans ───────────────────────────────────────────────────────────────
+// Purely optional ongoing dev-hour retainers — content edits, small fixes, new
+// features after launch. Not related to hosting (see pricingTiers — every
+// project includes its first year of domain & hosting) or the AI + CRM
+// platform (see platformPlan below, a separate product, not a Care Plan).
 
 export const carePlans: CarePlan[] = [
   {
-    name: 'Essential',
+    name: '1 Hour',
     price: '₱999/mo',
-    blurb: 'Managed hosting, SSL, security scans, backups, uptime monitoring, and ongoing CMS access to keep editing your site.',
+    blurb: 'Quick edits and small updates, every month — for sites that just need light upkeep.',
   },
   {
-    name: 'Growth',
-    price: '₱2,499/mo',
-    blurb: 'Everything in Essential, plus your CRM (leads inbox & project tracker), ~2 hrs of edits/month, and up to 3 team members.',
+    name: '2 Hours',
+    price: '₱1,499/mo',
+    blurb: 'Steady, ongoing updates — content changes, small fixes, minor tweaks.',
   },
   {
-    name: 'Premium',
-    price: '₱5,499/mo',
-    blurb: 'Everything in Growth, plus your AI receptionist (webchat, bookings & assistant), ~4 hrs of dev time/month, and up to 10 team members.',
+    name: '4 Hours',
+    price: '₱1,999/mo',
+    blurb: 'Room for bigger updates and new features, handled every month.',
   },
 ]
+
+// ─── Platform plan (AI Webchat + CRM) ──────────────────────────────────────────
+// Rozalix's own AI receptionist + CRM product, sold as a flat monthly plan on
+// top of any project tier. Deliberately NOT a Care Plan — it's a separate
+// product (see /products/crm, /products/webchat), not dev-hour support.
+
+export const platformPlan: PlatformPlan = {
+  name: 'Rozalix AI + CRM',
+  price: '₱999/mo',
+  blurb: 'Your AI receptionist answers customers instantly and logs every lead into one CRM — available on any project tier. Includes 1 seat.',
+  seatNote: '+₱499/mo per additional seat',
+  trialNote: 'Every project gets 2 months free.',
+}
 
 // ─── Current promotion ────────────────────────────────────────────────────────
 //

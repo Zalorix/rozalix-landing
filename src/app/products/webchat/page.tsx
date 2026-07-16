@@ -78,9 +78,8 @@ export default function WebchatProductPage() {
               </a>{' '}
               to catch people after they've left the page too — both are part of the same{' '}
               <a href="/#pricing" className="font-medium text-indigo hover:underline">
-                Care Plan
-              </a>{' '}
-              you're already growing into.
+                AI + CRM plan
+              </a>.
             </p>
           </Reveal>
         </Wrap>

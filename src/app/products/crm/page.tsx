@@ -68,9 +68,9 @@ export default function CrmProductPage() {
             </h2>
             <p className="text-[18px] leading-[1.6] text-slate-600">
               This isn't a separate app you have to sign up for — it's the same dashboard we use to build your
-              site, handed over to you. It grows alongside your{' '}
+              site, handed over to you. It's part of the{' '}
               <a href="/#pricing" className="font-medium text-indigo hover:underline">
-                Care Plan
+                AI + CRM plan
               </a>
               , and pairs naturally with{' '}
               <a href="/products/webchat" className="font-medium text-indigo hover:underline">

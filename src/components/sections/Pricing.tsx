@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { PricingScroller } from '@/components/sections/PricingScroller'
-import { pricingTiers, carePlans, discountedPrice } from '@/lib/content'
+import { pricingTiers, carePlans, platformPlan, discountedPrice } from '@/lib/content'
 
 // ─── Helper: split "₱1,500/mo" into price and "/mo" suffix ────────────────────
 function CarePrice({ raw }: { raw: string }) {
@@ -195,6 +195,30 @@ export function Pricing() {
           </div>
         </Reveal>
 
+        {/* ── AI + CRM — a separate product, not a Care Plan ──────────────────── */}
+        <Reveal className="mt-[64px]">
+          <div className="flex flex-wrap items-baseline gap-[14px] mb-[20px]">
+            <h3 className="font-sans text-[22px] font-semibold tracking-[0]">AI + CRM</h3>
+            <p className="text-[15px] text-slate-600">
+              Rozalix&apos;s own AI receptionist and lead-tracking CRM — separate from your
+              website, available on any project tier.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-[20px] rounded-[12px] border border-indigo-100 bg-indigo-50 px-[26px] py-[22px]">
+            <div>
+              <div className="font-sans text-[17px] font-semibold text-ink-900">{platformPlan.name}</div>
+              <p className="mt-[6px] max-w-[52ch] text-[14px] text-slate-600">{platformPlan.blurb}</p>
+              <p className="mt-[8px] text-[13px] font-medium text-indigo">{platformPlan.trialNote}</p>
+            </div>
+            <div className="text-right">
+              <div className="font-display text-[26px] font-bold text-indigo whitespace-nowrap">
+                <CarePrice raw={platformPlan.price} />
+              </div>
+              <div className="mt-[2px] text-[13px] text-slate-500 whitespace-nowrap">{platformPlan.seatNote}</div>
+            </div>
+          </div>
+        </Reveal>
+
         {/* ── Care plans ─────────────────────────────────────────────────────── */}
         {/*
           .care: margin-top:64px
@@ -209,10 +233,9 @@ export function Pricing() {
           <div className="flex flex-wrap items-baseline gap-[14px] mb-[28px]">
             <h3 className="font-sans text-[22px] font-semibold tracking-[0]">Care plans</h3>
             <p className="text-[15px] text-slate-600">
-              Optional monthly support to keep your site fast, secure, and up to date. Every
-              project includes a free trial of Premium — from 2 months on Launch up to 4 on
-              E-commerce (Custom is scoped per contract) — so you can try the full CRM + AI
-              receptionist before committing to a plan.
+              Optional monthly dev hours to keep your site evolving after launch — content
+              updates, small fixes, new features. Pick the hours that fit; change or cancel
+              anytime.
             </p>
           </div>
 
@@ -267,9 +290,9 @@ export function Pricing() {
           <div className="mt-[40px] flex gap-[10px] items-start text-[14.5px] text-slate-600 max-w-[64ch]">
             <Icon name="info" className="h-[18px] w-[18px] flex-[0_0_auto] mt-[2px] text-indigo" />
             <span>
-              All projects start with a free consultation. Hosting and domain can be bundled into
-              your first year or billed separately — we&apos;ll make it clear up front. Final
-              pricing depends on scope; these are starting points.
+              All projects start with a free consultation. Domain and hosting renew annually
+              after your first year, included free. Final pricing depends on scope; these are
+              starting points.
             </span>
           </div>
         </Reveal>
