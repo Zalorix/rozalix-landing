@@ -72,9 +72,9 @@ export function Stats() {
             1–2<span style={{ fontSize: '0.5em', fontWeight: 600 }}> wks</span>
           </StaticStat>
 
-          {/* Cell 4: static "24/7" — leans into the AI/communication positioning */}
-          <StaticStat label="AI answers, day and night" delay={240}>
-            24/7
+          {/* Cell 4: static "∞" — pairs with the new unlimited-revisions pricing policy */}
+          <StaticStat label="Unlimited iterations" delay={240}>
+            ∞
           </StaticStat>
         </div>
       </Wrap>

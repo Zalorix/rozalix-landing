@@ -121,7 +121,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'A clean, professional presence, fast.',
     features: [
       { icon: 'check', text: 'Up to 5 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Up to 2 rounds of revisions' },
+      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '1 year of domain & hosting included' },
@@ -137,7 +137,7 @@ export const pricingTiers: PricingTier[] = [
     featured: true,
     features: [
       { icon: 'check', text: 'Up to 10 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Up to 3 rounds of revisions' },
+      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '1 integration (Meta, Notion, and more)' },
@@ -153,7 +153,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'Depth, content control, and polish.',
     features: [
       { icon: 'check', text: 'Up to 15 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Up to 4 rounds of revisions' },
+      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '2 integrations (Meta, Notion, and more)' },
@@ -169,7 +169,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'Everything you need to sell online.',
     features: [
       { icon: 'check', text: 'Product catalog + core pages' },
-      { icon: 'repeat-2', text: 'Up to 5 rounds of revisions' },
+      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
       { icon: 'check', text: 'Editable CMS + product/order management' },
       { icon: 'check', text: 'GCash / Maya / PayPal + card gateway' },
       { icon: 'check', text: 'Inventory, customer accounts + 1 integration' },
@@ -242,15 +242,15 @@ export const platformPlan: PlatformPlan = {
 // struck-through price is always the genuine current list price, never an
 // invented "was" figure. Suggested rotation, each a real bounded window
 // (~4 weeks):
-//   1. Launch discount (this one)       — 10% off, real cut of the real price.
+//   1. Launch discount (this one)       — 20% off, real cut of the real price.
 //   2. Bonus revision round             — "+1 free revision round, any tier"
 //   3. Bonus Care Plan month            — "+1 free month" (2mo -> 3mo)
 export const currentPromo = {
   active: true,
   kind: 'percent-off' as const,
-  percent: 10,
-  headline: '10% off your first project',
-  description: 'For a limited time, take 10% off any project tier — book your consultation now to lock in the rate.',
+  percent: 20,
+  headline: '20% off your first project',
+  description: 'For a limited time, take 20% off any project tier — book your consultation now to lock in the rate.',
   endsAt: '2026-08-04T23:59:59+08:00',
 }
 
