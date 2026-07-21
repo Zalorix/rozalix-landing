@@ -73,7 +73,7 @@ export function Stats() {
           </StaticStat>
 
           {/* Cell 4: static "∞" — pairs with the new unlimited-revisions pricing policy */}
-          <StaticStat label="Unlimited iterations" delay={240}>
+          <StaticStat label="Revisions, till you're happy" delay={240}>
             ∞
           </StaticStat>
         </div>
