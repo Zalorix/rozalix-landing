@@ -180,21 +180,6 @@ export function Pricing() {
           ))}
         </PricingScroller>
 
-        {/* Options-per-round explainer — stated once here rather than repeated on every card,
-            since the mechanic is the same across all tiers (revisions are unlimited within
-            each tier's build window, which is already on each card). */}
-        <Reveal delay={320} className="mt-[36px]">
-          <div className="flex max-w-[70ch] items-start gap-[12px] rounded-[12px] border border-indigo-100 bg-indigo-50 px-[20px] py-[16px] text-[14.5px] text-slate-700">
-            <Icon name="repeat-2" className="h-[18px] w-[18px] flex-none mt-[2px] text-indigo" />
-            <span>
-              <strong className="font-semibold text-ink-900">Every round comes with real options.</strong>{' '}
-              Your first round of content and design starts with 5 options to choose from —
-              every revision after that adds 3 more. Development moves through one focused
-              build per round.
-            </span>
-          </div>
-        </Reveal>
-
         {/* ── AI + CRM — a separate product, not a Care Plan ──────────────────── */}
         <Reveal className="mt-[64px]">
           <div className="flex flex-wrap items-baseline gap-[14px] mb-[20px]">
