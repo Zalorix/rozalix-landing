@@ -169,6 +169,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'Everything you need to sell online.',
     features: [
       { icon: 'check', text: 'Product catalog + core pages' },
+      { icon: 'check', text: 'Progressive web app — native app doubles the price' },
       { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
       { icon: 'check', text: 'Editable CMS + product/order management' },
       { icon: 'check', text: 'GCash / Maya / PayPal + card gateway' },
@@ -181,7 +182,7 @@ export const pricingTiers: PricingTier[] = [
   {
     name: 'Custom',
     price: "Let's talk",
-    best: 'Web apps, dashboards & complex builds. From ₱299,999',
+    best: 'Web apps, dashboards & complex builds. From ₱199,999',
     features: [
       { icon: 'check', text: 'Discovery & UX strategy' },
       { icon: 'repeat-2', text: 'Unlimited revisions (within agreed scope)' },
