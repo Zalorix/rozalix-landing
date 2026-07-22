@@ -194,6 +194,7 @@ export function Pricing() {
               <div className="font-sans text-[17px] font-semibold text-ink-900">{platformPlan.name}</div>
               <p className="mt-[6px] max-w-[52ch] text-[14px] text-slate-600">{platformPlan.blurb}</p>
               <p className="mt-[8px] text-[13px] font-medium text-indigo">{platformPlan.trialNote}</p>
+              <p className="mt-[4px] text-[12.5px] text-slate-500">{platformPlan.usageNote}</p>
             </div>
             <div className="text-right">
               <div className="font-display text-[26px] font-bold text-indigo whitespace-nowrap">
