@@ -39,6 +39,7 @@ export interface PlatformPlan {
   blurb: string
   seatNote: string
   trialNote: string
+  usageNote: string
 }
 
 // ─── Services ─────────────────────────────────────────────────────────────────
@@ -121,7 +122,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'A clean, professional presence, fast.',
     features: [
       { icon: 'check', text: 'Up to 5 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
+      { icon: 'repeat-2', text: "Unlimited revisions until you're happy and satisfied" },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '1 year of domain & hosting included' },
@@ -137,7 +138,7 @@ export const pricingTiers: PricingTier[] = [
     featured: true,
     features: [
       { icon: 'check', text: 'Up to 10 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
+      { icon: 'repeat-2', text: "Unlimited revisions until you're happy and satisfied" },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '1 integration (Meta, Notion, and more)' },
@@ -153,7 +154,7 @@ export const pricingTiers: PricingTier[] = [
     best: 'Depth, content control, and polish.',
     features: [
       { icon: 'check', text: 'Up to 15 pages, custom mobile-first design' },
-      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
+      { icon: 'repeat-2', text: "Unlimited revisions until you're happy and satisfied" },
       { icon: 'check', text: 'Editable CMS + blog, lead/contact form' },
       { icon: 'check', text: 'Professional copywriting + full SEO' },
       { icon: 'check', text: '2 integrations (Meta, Notion, and more)' },
@@ -169,12 +170,12 @@ export const pricingTiers: PricingTier[] = [
     best: 'Everything you need to sell online.',
     features: [
       { icon: 'check', text: 'Product catalog + core pages' },
-      { icon: 'check', text: 'Progressive web app — native app doubles the price' },
-      { icon: 'repeat-2', text: 'Unlimited revisions within the build window' },
+      { icon: 'repeat-2', text: "Unlimited revisions until you're happy and satisfied" },
       { icon: 'check', text: 'Editable CMS + product/order management' },
       { icon: 'check', text: 'GCash / Maya / PayPal + card gateway' },
       { icon: 'check', text: 'Inventory, customer accounts + 1 integration' },
       { icon: 'check', text: 'Admin training · 1 year of domain & hosting included' },
+      { icon: 'check', text: 'Add a native mobile app — doubles the price' },
       { icon: 'check', text: '~5–8 weeks' },
     ],
     cta: 'Get a quote',
@@ -227,10 +228,11 @@ export const carePlans: CarePlan[] = [
 
 export const platformPlan: PlatformPlan = {
   name: 'Rozalix AI + CRM',
-  price: '₱999/mo',
+  price: '₱499/mo',
   blurb: 'Your AI receptionist answers customers instantly and logs every lead into one CRM — available on any project tier. Includes 1 seat.',
-  seatNote: '+₱499/mo per additional seat',
+  seatNote: '+₱249/mo per additional seat',
   trialNote: 'Every project gets 2 months free.',
+  usageNote: 'Fair usage included — additional fees may apply depending on AI usage.',
 }
 
 // ─── Current promotion ────────────────────────────────────────────────────────
