@@ -245,15 +245,15 @@ export const platformPlan: PlatformPlan = {
 // struck-through price is always the genuine current list price, never an
 // invented "was" figure. Suggested rotation, each a real bounded window
 // (~4 weeks):
-//   1. Launch discount (this one)       — 20% off, real cut of the real price.
+//   1. Launch discount (this one)       — 30% off, real cut of the real price.
 //   2. Bonus revision round             — "+1 free revision round, any tier"
 //   3. Bonus Care Plan month            — "+1 free month" (2mo -> 3mo)
 export const currentPromo = {
   active: true,
   kind: 'percent-off' as const,
-  percent: 20,
-  headline: '20% off your first project',
-  description: 'For a limited time, take 20% off any project tier — book your consultation now to lock in the rate.',
+  percent: 30,
+  headline: '30% off your first project',
+  description: 'For a limited time, take 30% off any project tier — book your consultation now to lock in the rate.',
   endsAt: '2026-08-04T23:59:59+08:00',
 }
 
