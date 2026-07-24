@@ -10,6 +10,19 @@ import { Eyebrow } from '@/components/ui/Eyebrow'
 import { PhoneField } from '@/components/ui/PhoneField'
 import { Select } from '@/components/ui/Select'
 import { validateContact, type ContactErrors } from '@/lib/validateContact'
+import { pricingTiers, discountedPrice } from '@/lib/content'
+
+// Budget dropdown options — derived from the live pricing tiers + current
+// promo so this never drifts back to stale placeholder pricing. "Custom" has
+// no structured starting price in content.ts (its "From ₱199,999" lives in
+// prose), so it's the one hand-maintained entry here.
+const budgetOptions = [
+  { value: 'Not sure yet' },
+  ...pricingTiers
+    .filter((t) => t.name !== 'Custom')
+    .map((t) => ({ value: `${t.name} — ${discountedPrice(t.price) ?? t.price}` })),
+  { value: 'Custom — ₱199,999+' },
+]
 
 type FieldKey = 'firstName' | 'lastName' | 'email' | 'message'
 
@@ -19,11 +32,14 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [phoneCountry, setPhoneCountry] = useState<CountryCode>('PH')
+  const [company, setCompany] = useState('')
   const [ptype, setPtype] = useState('New website')
   const [budget, setBudget] = useState('Not sure yet')
   const [message, setMessage] = useState('')
   const [errors, setErrors] = useState<ContactErrors>({})
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const firstNameRef = useRef<HTMLInputElement>(null)
   const lastNameRef = useRef<HTMLInputElement>(null)
@@ -79,8 +95,9 @@ export function Contact() {
     setErrors((prev) => ({ ...prev, phone: next.phone }))
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (submitting) return
     const errs = validateContact({ ...text(), phone, phoneCountry })
     setErrors(errs)
     if (Object.keys(errs).length > 0) {
@@ -91,7 +108,33 @@ export function Contact() {
       if (errs.message && messageRef.current) { messageRef.current.focus(); return }
       return
     }
-    setSubmitted(true)
+
+    setSubmitError(null)
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone: phoneE164,
+          message,
+          company,
+          ptype,
+          budget,
+        }),
+      })
+      if (!res.ok) throw new Error('request failed')
+      setSubmitted(true)
+    } catch {
+      setSubmitError(
+        "Something went wrong sending your message. Please try again, or email us directly at hello@rozalix.com.",
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -317,6 +360,8 @@ export function Contact() {
                       type="text"
                       placeholder="Acme Inc."
                       autoComplete="organization"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
                       className="font-[inherit] text-[16px] px-[14px] py-[12px] border border-slate-300 rounded-[8px] bg-white text-ink-900 transition-[0.15s] w-full placeholder:text-slate-400 focus:outline-none focus:border-indigo focus:shadow-[0_0_0_3px_var(--color-indigo-200)]"
                     />
                   </div>
@@ -354,14 +399,7 @@ export function Contact() {
                     ariaLabel="Budget range"
                     value={budget}
                     onChange={setBudget}
-                    options={[
-                      { value: 'Not sure yet' },
-                      { value: 'Launch — from ₱15,000' },
-                      { value: 'Business — from ₱25,000' },
-                      { value: 'Growth — from ₱35,000' },
-                      { value: 'E-commerce — from ₱60,000' },
-                      { value: 'Custom — ₱120,000+' },
-                    ]}
+                    options={budgetOptions}
                   />
                 </div>
 
@@ -395,12 +433,29 @@ export function Contact() {
                   .form-foot .fine:
                     font-size:13px; color:var(--slate-400); max-width:30ch
                 */}
+                {submitError && (
+                  <p className="mb-[14px] flex items-start gap-[6px] text-[13.5px] text-error">
+                    <AlertCircle className="w-[15px] h-[15px] mt-[1px] shrink-0" strokeWidth={1.75} />
+                    {submitError}
+                  </p>
+                )}
                 <div className="flex items-center justify-between gap-[16px] mt-[4px] max-[560px]:flex-col max-[560px]:items-stretch max-[560px]:gap-[14px]">
                   <p className="text-[13px] text-slate-400 max-w-[30ch] max-[560px]:max-w-none">
                     By submitting, you agree to be contacted about your project.
                   </p>
-                  <Button type="submit" variant="primary" size="lg" className="max-[560px]:w-full">
-                    Send inquiry <ArrowRight className="arr" strokeWidth={1.75} />
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    className={`max-[560px]:w-full${submitting ? ' opacity-60 pointer-events-none' : ''}`}
+                  >
+                    {submitting ? (
+                      'Sending…'
+                    ) : (
+                      <>
+                        Send inquiry <ArrowRight className="arr" strokeWidth={1.75} />
+                      </>
+                    )}
                   </Button>
                 </div>
               </form>
