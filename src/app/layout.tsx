@@ -26,11 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
-        {/* Rozalix AI chat widget — loads from the dashboard app.
-        Pointed at the local rozalix-web-app dev server for testing;
-        swap back to https://app.rozalix.com/embed.js before deploying. */}
+        {/* Rozalix AI chat widget — loads from the dashboard app. */}
         <Script
-          src="http://localhost:3002/embed.js"
+          src="https://app.rozalix.com/embed.js"
           data-rozalix-key="rozalix-landing"
           strategy="afterInteractive"
         />
